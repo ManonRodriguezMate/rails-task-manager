@@ -4,6 +4,11 @@ Rails.application.routes.draw do
   #list tasks --> read all tasks
   get "/tasks", to: "tasks#index"
 
+  #add a new task --> create (get + post)
+  get "/tasks/new", to: "tasks#new"
+
   #view the details of a tasks --> read one task
   get "/tasks/:id", to: "tasks#show", as: :task
+  post "tasks", to: "tasks#create"
+
 end
